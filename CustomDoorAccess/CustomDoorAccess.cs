@@ -14,7 +14,7 @@ namespace CustomDoorAccess
     SmodMajor = 3,
     SmodMinor = 0,
     SmodRevision = 0,
-    version = "2.0"
+    version = "1.1"
     )]
 
     public class CustomDoorAccess : Plugin
