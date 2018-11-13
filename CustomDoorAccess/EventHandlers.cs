@@ -26,23 +26,29 @@ namespace CustomDoorAccess
             Player player = ev.Player;
             foreach (KeyValuePair<string, string> x in access)
             {
-                if(ev.Door.Name == x.Key)
+                if (ev.Door.Name == x.Key)
                 {
-                    int itemID;
-                    if (Int32.TryParse(x.Value, out itemID))
+                    string value = x.Value.Trim();
+                    string[] itemIDs = value.Split('&');
+
+                    foreach (string eachValue in itemIDs)
                     {
-                        if (player.GetCurrentItemIndex().Equals(itemID) && !player.GetCurrentItemIndex().Equals(-1))
+                        int itemID;
+                        if (Int32.TryParse(eachValue, out itemID))
                         {
-                            ev.Allow = true;
+                            if (player.GetCurrentItemIndex().Equals(itemID) && !player.GetCurrentItemIndex().Equals(-1))
+                            {
+                                ev.Allow = true;
+                            }
+                            else if (revokeAll)
+                            {
+                                ev.Allow = false;
+                            }
                         }
-                        else if (revokeAll)
+                        else
                         {
-                            ev.Allow = false;
+                            plugin.Info(x.Value + " is not a int.");
                         }
-                    }
-                    else
-                    {
-                        plugin.Info("There was a problem with the ItemID");
                     }
                 }
             }
