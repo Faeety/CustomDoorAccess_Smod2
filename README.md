@@ -2,7 +2,7 @@
 
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---
-cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID** { You can only set one item for now ( it will be possible soon ) }
+cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID&ITEMID** Gives access to the door with the item(s) that you set.
 cda_revoke_all | Bool | false | Revoke the access to all the other cards or not
 
 ```
