@@ -5,6 +5,7 @@ using Smod2.Events;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace CustomDoorAccess
 {
@@ -22,14 +23,15 @@ namespace CustomDoorAccess
 
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
         {
-            foreach(KeyValuePair<string, string> x in access)
+            Player player = ev.Player;
+            foreach (KeyValuePair<string, string> x in access)
             {
                 if(ev.Door.Name == x.Key)
                 {
                     int itemID;
                     if (Int32.TryParse(x.Value, out itemID))
                     {
-                        if (ev.Player.GetCurrentItem().ItemType.Equals((ItemType)itemID))
+                        if (player.GetCurrentItemIndex().Equals(itemID) && !player.GetCurrentItemIndex().Equals(-1))
                         {
                             ev.Allow = true;
                         }

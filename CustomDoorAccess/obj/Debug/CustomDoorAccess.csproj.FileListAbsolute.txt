@@ -6,3 +6,11 @@ C:\Users\Claudio\source\repos\CustomDoorAccess\CustomDoorAccess\obj\Debug\Custom
 C:\Users\Claudio\source\repos\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete
 C:\Users\Claudio\source\repos\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
 C:\Users\Claudio\source\repos\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.dll
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.pdb
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\Smod2.dll
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csprojAssemblyReference.cache
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CoreCompileInputs.cache
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
+C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
