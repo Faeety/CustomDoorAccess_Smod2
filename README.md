@@ -2,12 +2,12 @@
 
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---
-cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID** { You can only set one item for now ( it will be possible soon ) }
+cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID&ITEMID** Gives access to the door with the item(s) that you set.
 cda_revoke_all | Bool | false | Revoke the access to all the other cards or not
 
 ```
-Exemple : cda_access_set: 012:1
-= 012 Door only open with Scientist Card or Default Cards if you set revoke_all to false
+Exemple : cda_access_set: 012:1&2
+= 012 Door only open with Scientist Card, Major Scientist Card or Default Cards if you set revoke_all to false
 ```
 
 ### Doors List
