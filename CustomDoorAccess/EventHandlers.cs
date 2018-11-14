@@ -4,14 +4,13 @@ using Smod2.EventHandlers;
 using Smod2.Events;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Linq;
 
 namespace CustomDoorAccess
 {
     class EventHandler : IEventHandlerDoorAccess
     {
-        Plugin plugin;
+        private Plugin plugin;
 
         public EventHandler(Plugin plugin)
         {
@@ -28,19 +27,20 @@ namespace CustomDoorAccess
             {
                 if (ev.Door.Name == x.Key)
                 {
-                    string value = x.Value.Trim();
-                    string[] itemIDs = value.Split('&');
+                    string trimmedValue = x.Value.Trim();
+                    string[] itemIDs = trimmedValue.Split('&');
 
                     foreach (string eachValue in itemIDs)
                     {
                         int itemID;
+                        int currentItem = player.GetCurrentItemIndex();
                         if (Int32.TryParse(eachValue, out itemID))
                         {
                             if (player.GetCurrentItemIndex().Equals(itemID) && !player.GetCurrentItemIndex().Equals(-1))
                             {
                                 ev.Allow = true;
                             }
-                            else if (revokeAll)
+                            else if (revokeAll && !itemIDs.Contains(currentItem.ToString()))
                             {
                                 ev.Allow = false;
                             }

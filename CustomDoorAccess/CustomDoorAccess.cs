@@ -3,6 +3,7 @@ using Smod2.Attributes;
 using Smod2.Events;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace CustomDoorAccess
 {
@@ -14,7 +15,7 @@ namespace CustomDoorAccess
     SmodMajor = 3,
     SmodMinor = 0,
     SmodRevision = 0,
-    version = "1.1"
+    version = "1.2"
     )]
 
     public class CustomDoorAccess : Plugin
