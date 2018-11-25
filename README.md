@@ -6,7 +6,7 @@ cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID&ITEMID** Gives access to 
 cda_revoke_all | Bool | false | Revoke the access to all the other cards or not
 
 ```
-Exemple : **cda_access_set:** 012:1&2,ESCAPE:2&11
+Exemple : **cda_access_set:** 012:1&2
 012 Door only open with Scientist Card, Major Scientist Card or Default Cards if you set revoke_all to false.
 ```
 
