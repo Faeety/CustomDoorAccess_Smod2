@@ -29,7 +29,7 @@ namespace CustomDoorAccess
 
         public override void OnEnable()
         {
-            this.Info("Plugin enabled.");
+            this.Info("Plugin ready to work!");
         }
 
         public override void OnDisable()
