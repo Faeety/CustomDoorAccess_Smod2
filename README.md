@@ -10,6 +10,11 @@ Exemple : **cda_access_set:** 012:1&2
 012 Door only open with Scientist Card, Major Scientist Card or Default Cards if you set revoke_all to false.
 ```
 
+**Some doors need cda_revoke_all to work because they don't need keycards by default!**
+```
+Exemple : ESCAPE
+```
+
 ### Doors List
 
 Doors ID | Room/Door
