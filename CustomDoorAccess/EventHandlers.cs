@@ -19,6 +19,8 @@ namespace CustomDoorAccess
 
         Dictionary<string, string> access = ConfigManager.Manager.Config.GetDictValue("cda_access_set");
         bool revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
+        bool scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
+        string[] scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
 
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
         {
@@ -43,6 +45,19 @@ namespace CustomDoorAccess
                             else if (revokeAll && !itemIDs.Contains(currentItem.ToString()))
                             {
                                 ev.Allow = false;
+                                if (scpAccess)
+                                {
+                                    foreach(string scpAccessDoor in scpAccessDoors)
+                                    {
+                                        if (ev.Door.Name == scpAccessDoor)
+                                        {
+                                            if (player.TeamRole.Team == Team.SCP)
+                                            {
+                                                ev.Allow = true;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                         else
