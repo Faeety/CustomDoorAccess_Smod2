@@ -14,3 +14,10 @@ C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\Cu
 C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete
 C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
 C:\Users\Claudio\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.dll
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.pdb
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csprojAssemblyReference.cache
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CoreCompileInputs.cache
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
+D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb

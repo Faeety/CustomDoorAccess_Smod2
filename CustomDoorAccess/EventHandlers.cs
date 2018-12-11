@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace CustomDoorAccess
 {
-    class EventHandler : IEventHandlerDoorAccess
+    class EventHandler : IEventHandlerDoorAccess, IEventHandlerWaitingForPlayers
     {
         private Plugin plugin;
 
@@ -21,6 +21,11 @@ namespace CustomDoorAccess
         bool revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
         bool scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
         string[] scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
+
+        public void OnWaitingForPlayers(WaitingForPlayersEvent ev)
+        {
+            if (!ConfigManager.Manager.Config.GetBoolValue("cda_enable", true, false)) this.plugin.pluginManager.DisablePlugin(plugin);
+        }
 
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
         {
@@ -62,7 +67,7 @@ namespace CustomDoorAccess
                         }
                         else
                         {
-                            plugin.Info(x.Value + " is not a int.");
+                            plugin.Error(x.Value + " is not a int.");
                         }
                     }
                 }
