@@ -3,7 +3,10 @@
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---
 cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID&ITEMID** Gives access to the door with the item(s) that you set.
-cda_revoke_all | Bool | false | Revoke the access to all the other cards or not
+cda_revoke_all | Bool | false | Revoke the access to all the other cards or not.
+cda_scp_access | Bool | false | Allow SCPs to open doors that you set with cda_scp_access_doors.
+cda_scp_access_doors | List | Empty | Set the doors that SCPs can open.
+cda_enable | Bool | true | Enable/Disable Plugin.
 
 ```
 Exemple : **cda_access_set:** 012:1&2
