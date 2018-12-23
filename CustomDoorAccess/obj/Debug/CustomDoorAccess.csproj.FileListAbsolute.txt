@@ -21,3 +21,11 @@ D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess
 D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete
 D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
 D:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.dll
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.pdb
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csprojAssemblyReference.cache
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CoreCompileInputs.cache
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
+E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\Smod2.dll

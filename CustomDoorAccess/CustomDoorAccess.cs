@@ -1,9 +1,7 @@
 ﻿using Smod2;
 using Smod2.Attributes;
-using Smod2.Events;
-using System;
 using System.Collections.Generic;
-using System.Collections;
+using System;
 
 namespace CustomDoorAccess
 {
@@ -15,29 +13,29 @@ namespace CustomDoorAccess
     SmodMajor = 3,
     SmodMinor = 0,
     SmodRevision = 0,
-    version = "1.3.1"
+    version = "1.3.2"
     )]
 
     public class CustomDoorAccess : Plugin
     {
         public override void Register()
         {
-            this.AddEventHandlers(new EventHandler(this));
-            this.AddConfig(new Smod2.Config.ConfigSetting("cda_access_set", new Dictionary<string, string>(), true, Smod2.Config.SettingType.DICTIONARY, true, "Set access."));
-            this.AddConfig(new Smod2.Config.ConfigSetting("cda_revoke_all", false, true, Smod2.Config.SettingType.BOOL, true, "Revoke the access for all the other cards ?"));
-            this.AddConfig(new Smod2.Config.ConfigSetting("cda_scp_access", false, true, Smod2.Config.SettingType.BOOL, true, "If true, SCPs can open the revoked doors"));
-            this.AddConfig(new Smod2.Config.ConfigSetting("cda_scp_access_doors", new string[] { string.Empty }, Smod2.Config.SettingType.LIST, true, "What doors can open SCPs"));
-            this.AddConfig(new Smod2.Config.ConfigSetting("cda_enable", true, Smod2.Config.SettingType.BOOL, true, "Enable/Disable CustomDoorAccess"));
+            AddEventHandlers(new EventHandler(this));
+            AddConfig(new Smod2.Config.ConfigSetting("cda_access_set", new Dictionary<string, string>(), true, Smod2.Config.SettingType.DICTIONARY, true, "Gives access to the door with the item(s) that you set."));
+            AddConfig(new Smod2.Config.ConfigSetting("cda_revoke_all", false, true, Smod2.Config.SettingType.BOOL, true, "If true, all the default keycards will not be able to open the door, just the item that you set."));
+            AddConfig(new Smod2.Config.ConfigSetting("cda_scp_access", false, true, Smod2.Config.SettingType.BOOL, true, "Allow SCPs to open doors that you set with cda_scp_access_doors."));
+            AddConfig(new Smod2.Config.ConfigSetting("cda_scp_access_doors", new string[] { string.Empty }, Smod2.Config.SettingType.LIST, true, "Set the doors that SCPs can open."));
+            AddConfig(new Smod2.Config.ConfigSetting("cda_enable", true, Smod2.Config.SettingType.BOOL, true, "Enable/Disable Plugin."));
         }
 
         public override void OnEnable()
         {
-            this.Info("Plugin ready to work!");
+            Info("Plugin has been Enabled!");
         }
 
         public override void OnDisable()
         {
-            this.Info("Plugin disabled.");
+            Info("Plugin has beed Disabled.");
         }
 
     }

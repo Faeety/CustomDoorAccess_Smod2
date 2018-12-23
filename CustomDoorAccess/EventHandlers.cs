@@ -17,14 +17,15 @@ namespace CustomDoorAccess
             this.plugin = plugin;
         }
 
-        Dictionary<string, string> access = ConfigManager.Manager.Config.GetDictValue("cda_access_set");
-        bool revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
-        bool scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
-        string[] scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
+        readonly Dictionary<string, string> access = ConfigManager.Manager.Config.GetDictValue("cda_access_set");
+        readonly bool revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
+        readonly bool scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
+        readonly string[] scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
 
         public void OnWaitingForPlayers(WaitingForPlayersEvent ev)
         {
-            if (!ConfigManager.Manager.Config.GetBoolValue("cda_enable", true, false)) this.plugin.pluginManager.DisablePlugin(plugin);
+            if (!ConfigManager.Manager.Config.GetBoolValue("cda_enable", true, false)) plugin.pluginManager.DisablePlugin(plugin);
+            plugin.Debug(ConfigManager.Manager.Config.GetBoolValue("cda_enable", true, false).ToString());
         }
 
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
@@ -32,6 +33,7 @@ namespace CustomDoorAccess
             Player player = ev.Player;
             foreach (KeyValuePair<string, string> x in access)
             {
+                plugin.Debug(x.Key);
                 if (ev.Door.Name == x.Key)
                 {
                     string trimmedValue = x.Value.Trim();
@@ -39,13 +41,14 @@ namespace CustomDoorAccess
 
                     foreach (string eachValue in itemIDs)
                     {
-                        int itemID;
                         int currentItem = player.GetCurrentItemIndex();
-                        if (Int32.TryParse(eachValue, out itemID))
+                        plugin.Debug(eachValue);
+                        if (Int32.TryParse(eachValue, out int itemID))
                         {
                             if (player.GetCurrentItemIndex().Equals(itemID) && !player.GetCurrentItemIndex().Equals(-1))
                             {
                                 ev.Allow = true;
+                                plugin.Debug(player.GetCurrentItemIndex().ToString());
                             }
                             else if (revokeAll && !itemIDs.Contains(currentItem.ToString()))
                             {
