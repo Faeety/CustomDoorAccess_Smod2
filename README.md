@@ -2,15 +2,16 @@
 
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---
-cda_access_set | Dictionary | EMPTY | **DOORSID:ITEMID&ITEMID** Gives access to the door with the item(s) that you set.
-cda_revoke_all | Bool | false | Revoke the access to all the other cards or not.
+cda_access_set | Dictionary | Empty | **DOORSID:ITEMID&ITEMID** Gives access to the door with the item(s) that you set.
+cda_revoke_all | Bool | false | Revoke the access to all the others cards or not.
 cda_scp_access | Bool | false | Allow SCPs to open doors that you set with cda_scp_access_doors.
 cda_scp_access_doors | List | Empty | Set the doors that SCPs can open.
 cda_enable | Bool | true | Enable/Disable Plugin.
 
 ```
-Exemple : **cda_access_set:** 012:1&2
-012 Door only open with Scientist Card, Major Scientist Card or Default Cards if you set revoke_all to false.
+Exemple : cda_access_set: 012:1&2,173:1&2
+
+012 and 173 door are only openeable with a Scientist Card, a Major Scientist Card or the Default Cards => if you set revoke_all to false.
 ```
 
 **Some doors need cda_revoke_all to work because they don't need keycards by default!**
