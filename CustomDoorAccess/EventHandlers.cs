@@ -25,7 +25,6 @@ namespace CustomDoorAccess
         public void OnWaitingForPlayers(WaitingForPlayersEvent ev)
         {
             if (!ConfigManager.Manager.Config.GetBoolValue("cda_enable", true, false)) plugin.pluginManager.DisablePlugin(plugin);
-            plugin.Debug(ConfigManager.Manager.Config.GetBoolValue("cda_enable", true, false).ToString());
         }
 
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
@@ -33,7 +32,6 @@ namespace CustomDoorAccess
             Player player = ev.Player;
             foreach (KeyValuePair<string, string> x in access)
             {
-                plugin.Debug(x.Key);
                 if (ev.Door.Name == x.Key)
                 {
                     string trimmedValue = x.Value.Trim();
@@ -42,13 +40,11 @@ namespace CustomDoorAccess
                     foreach (string eachValue in itemIDs)
                     {
                         int currentItem = player.GetCurrentItemIndex();
-                        plugin.Debug(eachValue);
                         if (Int32.TryParse(eachValue, out int itemID))
                         {
                             if (player.GetCurrentItemIndex().Equals(itemID) && !player.GetCurrentItemIndex().Equals(-1))
                             {
                                 ev.Allow = true;
-                                plugin.Debug(player.GetCurrentItemIndex().ToString());
                             }
                             else if (revokeAll && !itemIDs.Contains(currentItem.ToString()))
                             {
