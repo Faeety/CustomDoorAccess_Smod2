@@ -29,3 +29,11 @@ E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess
 E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
 E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
 E:\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\Smod2.dll
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csprojAssemblyReference.cache
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CoreCompileInputs.cache
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.dll
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.pdb
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.dll
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\CustomDoorAccess.pdb
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\bin\Debug\Smod2.dll
+E:\Old Windows 10\Documents\Github\CustomDoorAccess\CustomDoorAccess\obj\Debug\CustomDoorAccess.csproj.CopyComplete

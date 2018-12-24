@@ -8,8 +8,13 @@ using System.Linq;
 
 namespace CustomDoorAccess
 {
-    class EventHandler : IEventHandlerDoorAccess, IEventHandlerWaitingForPlayers
+    class EventHandler : IEventHandlerDoorAccess, IEventHandlerWaitingForPlayers, IEventHandlerRoundStart
     {
+        public Dictionary<string,string> access;
+        public bool revokeAll;
+        public bool scpAccess;
+        public string[] scpAccessDoors;
+
         private Plugin plugin;
 
         public EventHandler(Plugin plugin)
@@ -17,10 +22,13 @@ namespace CustomDoorAccess
             this.plugin = plugin;
         }
 
-        readonly Dictionary<string, string> access = ConfigManager.Manager.Config.GetDictValue("cda_access_set");
-        readonly bool revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
-        readonly bool scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
-        readonly string[] scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
+        public void OnRoundStart(RoundStartEvent ev)
+        {
+            access = ConfigManager.Manager.Config.GetDictValue("cda_access_set");
+            revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
+            scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
+            scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
+        }
 
         public void OnWaitingForPlayers(WaitingForPlayersEvent ev)
         {
