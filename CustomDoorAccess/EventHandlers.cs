@@ -10,8 +10,9 @@ namespace CustomDoorAccess
 {
     class EventHandler : IEventHandlerDoorAccess, IEventHandlerWaitingForPlayers, IEventHandlerRoundStart
     {
-        public Dictionary<string,string> access;
+        public Dictionary<string, string> access;
         public bool revokeAll;
+
         public bool scpAccess;
         public string[] scpAccessDoors;
 
@@ -40,7 +41,7 @@ namespace CustomDoorAccess
             Player player = ev.Player;
             foreach (KeyValuePair<string, string> x in access)
             {
-                if (ev.Door.Name == x.Key)
+                if (ev.Door.Name.Equals(x.Key))
                 {
                     string trimmedValue = x.Value.Trim();
                     string[] itemIDs = trimmedValue.Split('&');
@@ -61,9 +62,9 @@ namespace CustomDoorAccess
                                 {
                                     foreach(string scpAccessDoor in scpAccessDoors)
                                     {
-                                        if (ev.Door.Name == scpAccessDoor)
+                                        if (ev.Door.Name.Equals(scpAccessDoor))
                                         {
-                                            if (player.TeamRole.Team == Team.SCP)
+                                            if (player.TeamRole.Team.Equals(Team.SCP))
                                             {
                                                 ev.Allow = true;
                                             }

@@ -7,8 +7,8 @@ namespace CustomDoorAccess
 {
     [PluginDetails(
     author = "Faety",
-    description = "Custom your door access, doorid:card",
-    id = "faety.door.access",
+    description = "Change the access to the door that you want.",
+    id = "faety.custom.door.access",
     name = "Custom Door Access",
     SmodMajor = 3,
     SmodMinor = 0,
