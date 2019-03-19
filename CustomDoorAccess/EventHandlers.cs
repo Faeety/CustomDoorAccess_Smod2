@@ -10,11 +10,11 @@ namespace CustomDoorAccess
 {
     class EventHandler : IEventHandlerDoorAccess, IEventHandlerWaitingForPlayers, IEventHandlerRoundStart
     {
-        public Dictionary<string, string> access;
-        public bool revokeAll;
+        private Dictionary<string, string> access;
+        private bool revokeAll;
 
-        public bool scpAccess;
-        public string[] scpAccessDoors;
+        private bool ScpAccess;
+        private string[] scpAccessDoors;
 
         private Plugin plugin;
 
@@ -27,7 +27,7 @@ namespace CustomDoorAccess
         {
             access = ConfigManager.Manager.Config.GetDictValue("cda_access_set");
             revokeAll = ConfigManager.Manager.Config.GetBoolValue("cda_revoke_all", false);
-            scpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
+            ScpAccess = ConfigManager.Manager.Config.GetBoolValue("cda_scp_access", false);
             scpAccessDoors = ConfigManager.Manager.Config.GetListValue("cda_scp_access_doors", new string[] { string.Empty }, false);
         }
 
@@ -58,7 +58,7 @@ namespace CustomDoorAccess
                             else if (revokeAll && !itemIDs.Contains(currentItem.ToString()))
                             {
                                 ev.Allow = false;
-                                if (scpAccess)
+                                if (ScpAccess)
                                 {
                                     foreach(string scpAccessDoor in scpAccessDoors)
                                     {
@@ -70,6 +70,10 @@ namespace CustomDoorAccess
                                             }
                                         }
                                     }
+                                }
+                                else if (player.GetBypassMode())
+                                {
+                                    ev.Allow = true;
                                 }
                             }
                         }

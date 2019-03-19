@@ -7,13 +7,13 @@ namespace CustomDoorAccess
 {
     [PluginDetails(
     author = "Faety",
-    description = "Change the access to the door that you want.",
+    description = "Change the access(keycards) to the doors.",
     id = "faety.custom.door.access",
     name = "Custom Door Access",
     SmodMajor = 3,
     SmodMinor = 0,
     SmodRevision = 0,
-    version = "1.3.2"
+    version = "1.3.3"
     )]
 
     public class CustomDoorAccess : Plugin
@@ -30,12 +30,12 @@ namespace CustomDoorAccess
 
         public override void OnEnable()
         {
-            Info("Plugin has been Enabled!");
+            Info("Plugin has been enabled!");
         }
 
         public override void OnDisable()
         {
-            Info("Plugin has beed Disabled.");
+            Info("Plugin has been disabled.");
         }
 
     }
